@@ -6,6 +6,9 @@ import questionary
 
 data_path = 'respuesta_de_encuestas.xlsx'
 
+def data_path() -> str:
+    return questionary.path("¿Cuál es tu ruta al archivo de datos?").ask() 
+
 def binary_question(prompt:str, choices = ['Sí', 'No']) -> bool:
     question = questionary.select(
         prompt,
