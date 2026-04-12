@@ -121,3 +121,18 @@ def ask_segmentation():
     ages = ask_age_segmentation()
     
     return (genders, ages)
+
+
+if __name__ == "__main__":
+    print("--- Tests ---")
+    resultado = ask_segmentation()
+
+    print("\n" + "="*40)
+    if resultado:
+        genders, ages = resultado
+        print("RESULTADO DE SEGMENTACIÓN:")
+        print(f"  > Géneros seleccionados: {genders if genders else 'Ninguno/Todos'}")
+        print(f"  > Edades normalizadas:   {ages if ages else 'Ninguno/Todos'}")
+    else:
+        print("El usuario decidió NO segmentar los datos.")
+    print("="*40)
