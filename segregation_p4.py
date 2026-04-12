@@ -1,7 +1,7 @@
+# Phase 4
 import pandas as pd
 
-
-def phase4_new_dfs(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+def question_segmentation(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     Creates 2 new DataFrames.
 

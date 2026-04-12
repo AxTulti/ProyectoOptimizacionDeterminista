@@ -1,3 +1,4 @@
+# Phase 3
 import pandas as pd
 
 # Creates new df filtering rows by gender
@@ -30,7 +31,8 @@ def age_segmentation(df: pd.DataFrame, segments: list) -> pd.DataFrame:
 
     # Filtering
     age_segmented_df = age_segmented_df[
-        age_segmented_df["Edad"].astype(str).str.strip().isin(segments)
+        age_segmented_df["Edad"].astype(str).str.strip()
+        .isin(segments)
     ]
 
     return age_segmented_df
