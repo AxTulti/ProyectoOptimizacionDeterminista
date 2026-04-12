@@ -1,8 +1,8 @@
 from clean import load_data, clean_data
-from CLI import data_path, ask_gender_segmentation, ask_age_segmentation
-from segmentation_p3 import gender_segmentation, age_segmentation
-from segregation_p4 import question_segmentation
-from deportation_p5 import export_to_excel
+from cli import data_path, ask_gender_segmentation, ask_age_segmentation
+from segment import gender_segmentation, age_segmentation
+from group import question_segmentation
+from export import export_to_excel
 
 
 def main():
