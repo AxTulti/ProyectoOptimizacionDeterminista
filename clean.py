@@ -3,22 +3,23 @@ import pandas as pd
 # Fase 1 — Carga de datos y limpieza inicial
 
 def load_data(excel_path):
-    raw_data = pd.read_excel(excel_path, header=None)
+    try:    
+        raw_data = pd.read_excel(excel_path, header=None)
 
-    print("Original entries:", len(raw_data))
-    
-    return raw_data
-    
+        print("Original entries:", len(raw_data))
         
+        return raw_data
+    except:
+        raise ValueError("Archivo no Encontrado")
 
 # Fase 2 — Selección y renombramiento de columnas
 
 def clean_data(raw_data):
-
+    try:
         data = raw_data[(raw_data[2] == "Si") & (raw_data[14] == "Sí")]
 
         print("Filtered entries:", len(data))
-
+        
         new_columns = {
             4: "genero",
             5: "edad",
@@ -56,5 +57,6 @@ def clean_data(raw_data):
         data = data.rename(columns=new_columns).loc[:, new_columns.values()]
         
         return data
-    
+    except:
+        raise RuntimeError("Error al limpiar datos")
 
