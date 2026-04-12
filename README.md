@@ -37,7 +37,6 @@ Desarrollar una herramienta que permita:
 Instalar las siguientes librerías antes de ejecutar el proyecto:
 
 ```bash
-pip install pandas openpyxl questionary
 pip install -r requirements.txt
 ```
 
