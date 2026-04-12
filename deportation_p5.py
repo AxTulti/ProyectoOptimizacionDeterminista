@@ -35,7 +35,7 @@ def export_to_excel(
             # Adjusting column width based on title 
             for col_idx, column_name in enumerate(dataframe.columns, start=1):
                 title_length = len(str(column_name))
-                adjusted_width = min(title_length + 2, 50)
+                adjusted_width = min(title_length + 2, 50) # Add small padding
                 col_letter = get_column_letter(col_idx)
                 worksheet.column_dimensions[col_letter].width = adjusted_width
 
