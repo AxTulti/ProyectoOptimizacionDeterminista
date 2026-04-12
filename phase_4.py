@@ -10,7 +10,8 @@ def phase4_new_dfs(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
     df_scoring:  
         Contains the columns with questions regarding the scoring of each aspect
-        and a global score for the serious game selected"""
+        and a global score for the serious game selected
+    """
     
     # for both dfs
     base_columns = [
@@ -20,8 +21,8 @@ def phase4_new_dfs(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
         "categoria_videojuego"
     ]
 
-    # DataFrame de importancia
-    importancia_columns = [
+    # questions about importance
+    importance_columns = [
         "desafio_importancia",
         "retroalimentacion_importancia",
         "inmersion_importancia",
