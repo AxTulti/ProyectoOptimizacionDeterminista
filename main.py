@@ -14,10 +14,12 @@ def main():
 
     # Fase 3
     genders = ask_gender_segmentation()
-    df = gender_segmentation(df, genders)
+    if genders:
+        df = gender_segmentation(df, genders)
 
     ages = ask_age_segmentation()
-    df = age_segmentation(df, ages)
+    if ages:
+        df = age_segmentation(df, ages)
 
     # Fase 4
     df_importance, df_scoring = question_segmentation(df)
