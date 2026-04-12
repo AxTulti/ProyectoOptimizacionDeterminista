@@ -47,7 +47,7 @@ Para ejecutar el proyecto, utilice el siguiente comando en la terminal:
 python main.py
 ```
 
-El archivo de entrada `respuesta_de_encuestas.xlsx` debe ubicarse en el mismo directorio del proyecto o especificarse correctamente en la variable `data_path` dentro del archivo `cly.py`.
+El archivo de entrada `respuesta_de_encuestas.xlsx` debe ubicarse en el mismo directorio del proyecto o especificarse correctamente en la linea de comandos.
 
 ## Salida
 El script genera un archivo denominado `resultados_encuesta.xlsx` en el directorio de ejecución, el cual contiene tres hojas:
