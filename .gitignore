@@ -6,7 +6,7 @@ __pycache__/
 *.xlsm
 *.xlsb
 *.xls
-
+data/
 # C extensions
 *.so
 
