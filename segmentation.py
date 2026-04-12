@@ -1,7 +1,10 @@
 import pandas as pd
 
-# Filter rows by gender
+# Creates new df filtering rows by gender
 def gender_segmentation(df: pd.DataFrame, genders: list) -> pd.DataFrame:
+    """
+    Creates new df filtering rows by gender/s
+    """
     gender_segmented_df = df.copy()
 
     normalized_genders = [gen.strip().lower() for gen in genders]
@@ -10,6 +13,7 @@ def gender_segmentation(df: pd.DataFrame, genders: list) -> pd.DataFrame:
     if any(gen not in real_genders for gen in normalized_genders):
         raise ValueError(f"Valid options: {real_genders}")
 
+    #
     gender_segmented_df = gender_segmented_df[
         gender_segmented_df["Genero"].astype(str).str.strip().str.lower()
         .isin(normalized_genders)
@@ -17,8 +21,11 @@ def gender_segmentation(df: pd.DataFrame, genders: list) -> pd.DataFrame:
 
     return gender_segmented_df
 
-# Filter rows by age range
+
 def age_segmentation(df: pd.DataFrame, segments: list) -> pd.DataFrame:
+    """
+    Creates new df filtering rows by age range/s
+    """
     age_segmented_df = df.copy()
 
     age_segmented_df = age_segmented_df[
