@@ -56,11 +56,5 @@ El script genera un archivo denominado `resultados_encuesta.xlsx` en el director
 - **Importancia:** contiene las valoraciones de importancia de los atributos evaluados.
 - **Calificaciones:** contiene las calificaciones de los atributos y la calificación global del videojuego.
 
-## Consideraciones
-- El sistema maneja entradas inválidas durante la segmentación interactiva, solicitando nuevamente la selección al usuario.
-- No es necesario modificar el código para ejecutar el script; todas las decisiones se toman en tiempo de ejecución.
-- La estructura modular facilita el mantenimiento y la reutilización del código.
-- El archivo de salida se guarda automáticamente en el mismo directorio donde se ejecuta el script.
-
 ## Licencia
 Este proyecto se desarrolla con fines académicos.
