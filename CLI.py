@@ -26,19 +26,21 @@ def normalize_gender(gender:str):
 
 def normalize_age(age:str):
     if age == 'Hasta los 18 años':
-        return [0, 18]
+        return ['Menor a 15', 'Entre 15 y 18']
     if age == 'Entre 19 y 30 años':
-        return [19, 30]
+        return ['Entre 19 y 22', 'Menor a 22', 'Entre 23 y 30']
     if age == '31 años o más':
-        return [31, 150]
+        return ['Entre 31 y 50', 'Más de 50']
     
+    return []
+
     
 
 def ask_gender_segmentation():
     '''
     Returns False if no segmentation is selected
     Returns a tuple containing one or more of the following:
-        {'Male', 'Female', 'Other'}
+        {'Masculino', ''Femenino', 'Otro'}
     '''
     do_gender_segmentation = binary_question('¿Desea segmentar por género?')
     if not do_gender_segmentation: return False
@@ -58,16 +60,16 @@ def ask_gender_segmentation():
     # If all options are selected, we don't segmentate
     if len(selected_genders) == 3: return False
     
-    # Cast selection into return format
-    selected_genders = [normalize_gender(gender) for gender in selected_genders]
+    # Cast selection into return format (deprecated)
+    # selected_genders = [normalize_gender(gender) for gender in selected_genders]
     
     return selected_genders
 
 def ask_age_segmentation():
     '''
-    Returns False if no segmentation is selected
+    Returns Empty Tuple if no segmentation is selected
     Returns a tuple containing one or more of the following:
-        {[0, 18], [19, 30], [30, 150]} Where each interval is inclusive
+        {'Menor a 15', 'Entre 15 y 18', 'Entre 19 y 22', 'Menor a 22', 'Entre 23 y 30', 'Entre 31 y 50', 'Más de 50'} 
     '''
     
     do_age_segmentation = binary_question('¿Desea segmentar por rangos de edad?')
@@ -92,6 +94,9 @@ def ask_age_segmentation():
     # Cast selection into return format
     selected_ages = [normalize_age(age) for age in selected_ages]
     
+    # This contains a list of tupples, we will flatten them
+    selected_ages = [label for inner_tuple in selected_ages for label in inner_tuple]
+    
     return selected_ages
     
 def ask_segmentation():
@@ -100,9 +105,11 @@ def ask_segmentation():
         Returns a tuple according to segmentation choices:
         (genders, ages)
         Where genders is a tuple containing one or more of the following:
-        {'Male', 'Female', 'Other'}
+        {'Masculino', ''Femenino', 'Otro'}
+        
         And Age is a tuple containing one or more of the following
-        {[0, 18], [19, 30], [30, 150]} Where each interval is inclusive
+        {'Menor a 15', 'Entre 15 y 18', 'Entre 19 y 22', 'Menor a 22', 'Entre 23 y 30', 'Entre 31 y 50', 'Más de 50'} 
+
     '''
     do_segmentation = binary_question('¿Desea segmentar los datos?')
     if not do_segmentation: return False
