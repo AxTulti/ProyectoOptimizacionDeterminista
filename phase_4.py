@@ -57,7 +57,7 @@ def phase4_new_dfs(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     ]
 
     # new dfs
-    df_importance = df[base_columns + df_importance].copy()
+    df_importance = df[base_columns + importance_columns].copy()
     df_scoring = df[base_columns + score_columns].copy()
 
     return df_importance, df_scoring
