@@ -1,4 +1,4 @@
-from clean import load_data, clean_data
+from clean import load_data, clean_data, normalize_genders
 from cli import data_path, ask_gender_segmentation, ask_age_segmentation
 from segment import gender_segmentation, age_segmentation
 from group import question_segmentation
@@ -12,10 +12,11 @@ def main():
         # Fase 1 y 2
         df = load_data(file_path)
         df = clean_data(df)
+        df = normalize_genders(df)
 
         # Fase 3
         genders = ask_gender_segmentation()
-        
+                
         if genders:
             df = gender_segmentation(df, genders)
 

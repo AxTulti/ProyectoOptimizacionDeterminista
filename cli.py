@@ -15,16 +15,6 @@ def binary_question(prompt:str, choices = ['Sí', 'No']) -> bool:
     return (question == 'Sí')
 
 
-def normalize_gender(gender:str):
-    if gender == 'Masculino':
-        return 'Male'
-    if gender == 'Femenino':
-        return 'Female'
-    if gender == 'Otro':
-        return 'Other'
-    
-    return False
-
 def normalize_age(age:str):
     if age == 'Hasta los 18 años':
         return ['Menor a 15', 'Entre 15 y 18']
@@ -60,9 +50,6 @@ def ask_gender_segmentation():
     
     # If all options are selected, we don't segmentate
     if len(selected_genders) == 3: return False
-    
-    # Cast selection into return format (deprecated)
-    # selected_genders = [normalize_gender(gender) for gender in selected_genders]
     
     return selected_genders
 

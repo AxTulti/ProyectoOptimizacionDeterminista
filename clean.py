@@ -60,3 +60,8 @@ def clean_data(raw_data):
     except:
         raise RuntimeError("Error al limpiar datos")
 
+def normalize_genders(data):
+        
+    data.loc[~data["genero"].isin(["Masculino", "Femenino"]), "genero"] = "Otro"
+    
+    return data
