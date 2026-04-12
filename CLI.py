@@ -4,8 +4,6 @@
 # if not already installed
 import questionary 
 
-data_path = 'respuesta_de_encuestas.xlsx'
-
 def data_path() -> str:
     return questionary.path("¿Cuál es tu ruta al archivo de datos?").ask() 
 
