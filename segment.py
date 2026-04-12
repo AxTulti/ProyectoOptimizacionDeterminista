@@ -17,7 +17,7 @@ def gender_segmentation(df: pd.DataFrame, genders: list) -> pd.DataFrame:
 
         # Filtering
         gender_segmented_df = gender_segmented_df[
-            gender_segmented_df["Genero"].astype(str).str.strip().str.lower()
+            gender_segmented_df["genero"].astype(str).str.strip().str.lower()
             .isin(normalized_genders)
         ]
 
