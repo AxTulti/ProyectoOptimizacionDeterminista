@@ -32,16 +32,10 @@ def export_to_excel(
             worksheet = writer.book[sheet_name]
 
 
-            # Adjusting column widht
+            # Adjusting column width based on title 
             for col_idx, column_name in enumerate(dataframe.columns, start=1):
-                max_length = len(str(column_name))
-
-                for value in dataframe[column_name]:
-                    value_length = len(str(value)) if value is not None else 0
-                    if value_length > max_length:
-                        max_length = value_length
-
-                adjusted_width = min(max_length + 2, 40)
+                title_length = len(str(column_name))
+                adjusted_width = min(title_length + 2, 50)
                 col_letter = get_column_letter(col_idx)
                 worksheet.column_dimensions[col_letter].width = adjusted_width
 
