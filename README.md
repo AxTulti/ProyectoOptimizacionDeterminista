@@ -37,7 +37,7 @@ Desarrollar una herramienta que permita:
 Instalar las siguientes librerías antes de ejecutar el proyecto:
 
 ```bash
-pip install pandas openpyxl questionary
+
 pip install -r requirements.txt
 ```
 
@@ -48,4 +48,14 @@ Para ejecutar el proyecto, utilice el siguiente comando en la terminal:
 python main.py
 ```
 
-El archivo de entrada `respuesta_de_encuestas.xlsx` debe ubicarse en el mismo directorio del proyecto o especificarse 
+El archivo de entrada `respuesta_de_encuestas.xlsx` debe ubicarse en el mismo directorio del proyecto o especificarse correctamente en la linea de comandos.
+
+## Salida
+El script genera un archivo denominado `resultados_encuesta.xlsx` en el directorio de ejecución, el cual contiene tres hojas:
+
+- **Datos Completos:** incluye todas las columnas seleccionadas después de la limpieza y segmentación.
+- **Importancia:** contiene las valoraciones de importancia de los atributos evaluados.
+- **Calificaciones:** contiene las calificaciones de los atributos y la calificación global del videojuego.
+
+## Licencia
+Este proyecto se desarrolla con fines académicos.
