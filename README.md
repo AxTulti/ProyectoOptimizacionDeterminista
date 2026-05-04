@@ -18,6 +18,18 @@ Desarrollar una herramienta que permita:
 4. Generar conjuntos de datos específicos para análisis.
 5. Exportar los resultados a un archivo Excel con múltiples hojas.
 
+## Estructura del Proyecto
+```text
+.
+├── clean.py                 # Carga y limpieza de datos
+├── cly.py                   # Interfaz de segmentación interactiva en consola
+├── segmentation.py          # Segmentación por género y edad
+├── segregation.py           # Creación de DataFrames de importancia y calificaciones
+├── deportation.py           # Exportación de resultados a Excel
+├── main.py                  # Script principal de ejecución
+└── respuesta_de_encuestas.xlsx  # Archivo de entrada
+```
+
 ## Requisitos
 - Python 3.9 o superior.
 
@@ -25,6 +37,7 @@ Desarrollar una herramienta que permita:
 Instalar las siguientes librerías antes de ejecutar el proyecto:
 
 ```bash
+
 pip install -r requirements.txt
 ```
 
